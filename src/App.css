@@ -1,0 +1,284 @@
+/* App.css - Diseño minimalista, responsivo y centrado */
+:root {
+  --primary-color: #3a86ff;
+  --primary-hover: #1a56ff;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --bg-color: #f9fafb;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --border-radius: 8px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.app-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.auth-form {
+  width: 100%;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.1);
+}
+
+.form-input::placeholder {
+  color: #a0aec0;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.submit-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.result {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+  animation: fadeIn 0.3s ease;
+}
+
+.result-success {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--success-color);
+  border: 2px solid var(--success-color);
+}
+
+.result-error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--error-color);
+  border: 2px solid var(--error-color);
+}
+
+.counter {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.footer:hover {
+  color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Media queries para responsividad */
+/* Dispositivos móviles pequeños */
+@media (max-width: 320px) {
+  .app-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .app-description {
+    font-size: 0.9rem;
+  }
+  
+  .auth-form {
+    padding: 1.25rem;
+  }
+  
+  .form-input {
+    font-size: 0.9rem;
+  }
+  
+  .submit-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .result {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+
+/* Dispositivos móviles medianos */
+@media (min-width: 321px) and (max-width: 480px) {
+  .app-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .auth-form {
+    padding: 1.5rem;
+  }
+}
+
+/* Tablets y móviles en horizontal */
+@media (min-width: 481px) and (max-width: 768px) {
+  .app-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1200px) {
+  .app-container {
+    max-width: 600px; /* Mantener máximo de 600px incluso en pantallas grandes */
+  }
+}
+
+/* Dispositivos táctiles con hover limitado */
+@media (hover: none) {
+  .submit-button:hover {
+    transform: none;
+    background-color: var(--primary-color);
+  }
+  
+  .footer:hover {
+    color: var(--text-secondary);
+  }
+}
+
+/* Preferencia de reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .submit-button,
+  .result {
+    transition: none;
+    animation: none;
+  }
+  
+  .submit-button:hover {
+    transform: none;
+  }
+}
